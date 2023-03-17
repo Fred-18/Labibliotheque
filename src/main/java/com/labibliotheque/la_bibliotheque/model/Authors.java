@@ -15,7 +15,4 @@ public class Authors {
     private String firstNameAuthor;
     private String lastNameAuthor;
 
-
-
-
 }
