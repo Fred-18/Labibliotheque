@@ -1,15 +1,14 @@
 package com.labibliotheque.la_bibliotheque.model;
-
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
-import org.springframework.data.annotation.Id;
+import lombok.NoArgsConstructor;
 
     @Data
     @Entity
+    @NoArgsConstructor
+    @AllArgsConstructor
     public class Users {
-        @jakarta.persistence.Id
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         private int id;
@@ -20,6 +19,5 @@ import org.springframework.data.annotation.Id;
         private int phone;
         private String addresse;
         private int age;
-
 
     }
