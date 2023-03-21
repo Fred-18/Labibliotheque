@@ -1,4 +1,4 @@
-package com.labibliotheque.la_bibliotheque.models;
+package com.labibliotheque.la_bibliotheque.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
