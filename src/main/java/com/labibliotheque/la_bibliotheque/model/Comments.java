@@ -1,8 +1,6 @@
 package com.labibliotheque.la_bibliotheque.model;
-
 import jakarta.persistence.*;
 import lombok.Data;
-
 import java.util.Date;
 
 @Data
