@@ -1,11 +1,7 @@
 package com.labibliotheque.la_bibliotheque.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.*;
 import lombok.Data;
-
 import java.util.Date;
 
 @Data
@@ -19,5 +15,11 @@ public class Books {
     private boolean availability;
     private Date publishDate;
     private int rating;
-
+    
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name="id Publisher",referencedColumnName = "id")
+    private Publishers publishers;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name="id Categories",referencedColumnName = "id")
+    private Categories categories;
 }
