@@ -1,23 +1,26 @@
 package com.labibliotheque.la_bibliotheque.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.*;
 import lombok.Data;
 
 import java.util.Date;
+import java.util.List;
 
 @Data
 @Entity
 public class Books {
     @Id
-    @Column(name = "id_book")
-    private int idBook;
+    private int id;
     private String title;
     private String description;
     private boolean availability;
     private Date publishDate;
-    private int rating;
+    @ManyToOne
+    private Publishers publishers;
+    @ManyToOne
+    private Categories categories;
+    @ManyToMany
+    private List<Authors> authors;
+
 
 }
