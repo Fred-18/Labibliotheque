@@ -2,7 +2,6 @@ package com.labibliotheque.la_bibliotheque.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
-
 import java.util.Date;
 import java.util.List;
 
@@ -21,6 +20,4 @@ public class Books {
     private Categories categories;
     @ManyToMany
     private List<Authors> authors;
-
-
 }
