@@ -8,10 +8,11 @@ import java.util.Date;
 @Entity
 public class Comments {
     @Id
-    private int idComment;
+    private int id;
     private Date commentDate;
+    private int ratting;
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "id_book", referencedColumnName = "id_book")
+    @JoinColumn(name = "id_book", referencedColumnName = "id")
     private Books books;
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "id_user", referencedColumnName = "id")
