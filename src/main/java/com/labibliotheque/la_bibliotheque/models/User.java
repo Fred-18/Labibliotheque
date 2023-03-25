@@ -17,6 +17,10 @@ import lombok.NoArgsConstructor;
         private String password;
         private String mail;
         private int phone;
-        private String addresse;
+        private String address;
         private int age;
+        
+        @ManyToOne
+        private Role role;
     }
+    
