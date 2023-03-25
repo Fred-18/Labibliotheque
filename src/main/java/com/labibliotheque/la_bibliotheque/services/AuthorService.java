@@ -11,17 +11,20 @@ import java.util.Optional;
 public class AuthorService {
     @Autowired
     AuthorRepository ar;
-    
-    public Optional<Author>getAuthor(int id){
+
+    public Optional<Author> getAuthor(int id) {
         return ar.findById(id);
     }
-    public Iterable<Author>getAllAuthors(){
+
+    public Iterable<Author> getAllAuthors() {
         return ar.findAll();
     }
-    public void addAuthor(Author author){
-         ar.save(author);
+
+    public void addAuthor(Author author) {
+        ar.save(author);
     }
-    public void deleteAuthor(Author author){
+
+    public void deleteAuthor(Author author) {
         ar.delete(author);
     }
 }

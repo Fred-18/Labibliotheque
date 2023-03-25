@@ -11,17 +11,20 @@ import java.util.Optional;
 public class UserService {
     @Autowired
     UserRepository us;
-    
-    public Optional<User>getUser(int id){
-        return us .findById(id);
+
+    public Optional<User> getUser(int id) {
+        return us.findById(id);
     }
-    public Iterable<User>getAllUsers(){
+
+    public Iterable<User> getAllUsers() {
         return us.findAll();
     }
-    public void addUser(User user){
+
+    public void addUser(User user) {
         us.save(user);
     }
-    public void deleteUser(User user){
+
+    public void deleteUser(User user) {
         us.delete(user);
     }
 }
