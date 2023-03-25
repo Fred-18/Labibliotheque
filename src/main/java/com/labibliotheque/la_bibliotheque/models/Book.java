@@ -1,4 +1,4 @@
-package com.labibliotheque.la_bibliotheque.model;
+package com.labibliotheque.la_bibliotheque.models;
 
 import jakarta.persistence.*;
 import lombok.Data;
@@ -7,7 +7,7 @@ import java.util.List;
 
 @Data
 @Entity
-public class Books {
+public class Book {
     @Id
     private int id;
     private String title;
@@ -15,9 +15,9 @@ public class Books {
     private boolean availability;
     private Date publishDate;
     @ManyToOne
-    private Publishers publishers;
+    private Publisher publisher;
     @ManyToOne
-    private Categories categories;
+    private Category category;
     @ManyToMany
-    private List<Authors> authors;
+    private List<Author> authors;
 }

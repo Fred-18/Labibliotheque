@@ -1,4 +1,4 @@
-package com.labibliotheque.la_bibliotheque.model;
+package com.labibliotheque.la_bibliotheque.models;
 
 
 import jakarta.persistence.*;
@@ -10,13 +10,13 @@ import java.util.List;
 @Data
 @Entity
 @NoArgsConstructor
-public class Authors {
+public class Author {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String firstNameAuthor;
     private String lastNameAuthor;
     @ManyToMany(mappedBy = "authors")
-    private List<Books> books;
+    private List<Book> books;
 
 }

@@ -1,4 +1,4 @@
-package com.labibliotheque.la_bibliotheque.model;
+package com.labibliotheque.la_bibliotheque.models;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -11,13 +11,13 @@ import java.util.List;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-public class Categories {
+public class Category {
     @Id
     private int id;
     private String nameCategory;
 
     @OneToMany(mappedBy = "categories")
-    private List<Books> books;
+    private List<Book> books;
 
 
 }
