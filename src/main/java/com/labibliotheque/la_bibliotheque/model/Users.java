@@ -19,5 +19,4 @@ import lombok.NoArgsConstructor;
         private int phone;
         private String addresse;
         private int age;
-
     }
