@@ -1,4 +1,4 @@
-package com.labibliotheque.la_bibliotheque.model;
+package com.labibliotheque.la_bibliotheque.models;
 
 
 import jakarta.persistence.Entity;
@@ -7,7 +7,7 @@ import lombok.Data;
 
 @Data
 @Entity
-public class Roles {
+public class Role {
     @Id
     private int idRole;
     private String labelRole;

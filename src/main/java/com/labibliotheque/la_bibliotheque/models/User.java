@@ -1,4 +1,4 @@
-package com.labibliotheque.la_bibliotheque.model;
+package com.labibliotheque.la_bibliotheque.models;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
     @Entity
     @NoArgsConstructor
     @AllArgsConstructor
-    public class Users {
+    public class User {
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         private int id;
