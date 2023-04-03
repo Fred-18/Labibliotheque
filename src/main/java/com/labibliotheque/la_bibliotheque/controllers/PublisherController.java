@@ -3,8 +3,7 @@ package com.labibliotheque.la_bibliotheque.controllers;
 import com.labibliotheque.la_bibliotheque.models.Publisher;
 import com.labibliotheque.la_bibliotheque.services.PublisherService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class PublisherController {
@@ -18,5 +17,13 @@ public class PublisherController {
     @GetMapping("/publishers")
      public Iterable<Publisher> getAllPublishers(){
         return ps.getAllPublishers();
+    }
+    @PostMapping("/publisher/add")
+    public void savePublisher(@RequestBody Publisher publisher){
+        ps.addPublishers(publisher);
+    }
+    @PostMapping("/publisher/delete")
+    public void deletePublisher(@PathVariable("id") Publisher publisher){
+        ps.deletePublishers(publisher);
     }
 }
