@@ -8,14 +8,15 @@ import org.springframework.stereotype.Service;
 import java.util.Optional;
 
 @Service
+
 public class CategoryService {
     @Autowired
     CategoryRepository cr;
     
-    public Optional<Category>getCathegorie(int id){
+    public Optional<Category> getCategory(int id){
         return cr.findById(id);
     }
-    public Iterable<Category>getAllCathegories(){
+    public Iterable<Category>getAllCategories(){
         return cr.findAll();
     }
     

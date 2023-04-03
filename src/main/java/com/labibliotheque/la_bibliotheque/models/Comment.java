@@ -1,5 +1,7 @@
-package com.labibliotheque.la_bibliotheque.model;
+package com.labibliotheque.la_bibliotheque.models;
 
+import com.labibliotheque.la_bibliotheque.models.Book;
+import com.labibliotheque.la_bibliotheque.models.User;
 import jakarta.persistence.*;
 import lombok.Data;
 import java.util.Date;

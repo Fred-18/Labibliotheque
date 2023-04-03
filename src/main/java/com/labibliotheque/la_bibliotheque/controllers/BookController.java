@@ -3,11 +3,9 @@ package com.labibliotheque.la_bibliotheque.controllers;
 import com.labibliotheque.la_bibliotheque.models.Book;
 import com.labibliotheque.la_bibliotheque.services.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.*;
 
-@Controller
+@RestController
 public class BookController {
     @Autowired
     private BookService bs;
@@ -16,4 +14,19 @@ public class BookController {
     public Book getBookById(@PathVariable("id")int id){
         return bs.getBook(id).orElseThrow();
     }
+    
+    @GetMapping("/books")
+    public Iterable<Book>getAllBooks(){
+        return bs.getAllBooks();
+    }
+    
+    @PostMapping("/book/add")
+    public void saveBook(@RequestBody Book book){
+        bs.addBook(book);
+    }
+    @DeleteMapping("/book/delete/{id}")
+    public void deleteBook(@PathVariable("id")Book book){
+        bs.deleteBook(book);
+    }
 }
+

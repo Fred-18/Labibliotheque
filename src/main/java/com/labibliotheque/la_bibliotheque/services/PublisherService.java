@@ -14,7 +14,7 @@ public class PublisherService {
     public Optional<Publisher>getPublisher(int id){
         return ps.findById(id);
     }
-    public Iterable<Publisher>getAllPublisher(){
+    public Iterable<Publisher>getAllPublishers(){
         return ps.findAll();
     }
     public void addPublishers(Publisher publisher){
