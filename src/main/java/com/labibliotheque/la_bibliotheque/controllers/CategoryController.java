@@ -13,7 +13,7 @@ public class CategoryController {
     @Autowired
     private CategoryService cs;
     
-    @GetMapping("/categoty/{id}")
+    @GetMapping("/category/{id}")
     public Category getCategoryById(@PathVariable("id")int id){
         return cs.getCategory(id).orElseThrow();
     }

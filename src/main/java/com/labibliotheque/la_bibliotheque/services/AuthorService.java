@@ -24,8 +24,8 @@ public class AuthorService {
         ar.save(author);
     }
 
-    public void deleteAuthor(Author author) {
-        ar.delete(author);
+    public void deleteAuthor(int id) {
+        ar.deleteById(id);
     }
 
     public List<Author> getAuthorByFirstName(String firstname) {

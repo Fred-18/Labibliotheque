@@ -20,7 +20,7 @@ public class PublisherService {
     public void addPublishers(Publisher publisher){
         ps.save(publisher);
     }
-    public void deletePublishers(Publisher publisher){
-        ps.delete(publisher);
+    public void deletePublishers(int id){
+        ps.deleteById(id);
     }
 }

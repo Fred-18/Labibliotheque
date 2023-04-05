@@ -11,7 +11,7 @@ public class PublisherController {
     private PublisherService ps;
     
     @GetMapping("/publisher/{id}")
-     public Publisher getPublisherById(int id){
+     public Publisher getPublisherById(@PathVariable int id){
         return ps.getPublisher(id).orElseThrow();
     }
     @GetMapping("/publishers")
@@ -22,8 +22,8 @@ public class PublisherController {
     public void savePublisher(@RequestBody Publisher publisher){
         ps.addPublishers(publisher);
     }
-    @PostMapping("/publisher/delete")
-    public void deletePublisher(@PathVariable("id") Publisher publisher){
-        ps.deletePublishers(publisher);
+    @PostMapping("/publisher/delete/{id}")
+    public void deletePublisher(@PathVariable("id")int id){
+        ps.deletePublishers(id);
     }
 }

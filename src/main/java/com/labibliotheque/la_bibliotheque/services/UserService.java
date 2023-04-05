@@ -24,7 +24,7 @@ public class UserService {
         us.save(user);
     }
 
-    public void deleteUser(User user) {
-        us.delete(user);
+    public void deleteUser(int id) {
+        us.deleteById(id);
     }
 }

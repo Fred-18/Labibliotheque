@@ -13,7 +13,7 @@ public class CommentController {
     private CommentService cos;
     
     @GetMapping("/comment/{id}")
-    public Comment getCommentById(int id){
+    public Comment getCommentById(@PathVariable int id){
         return cos.getComment(id).orElseThrow();
     }
     @GetMapping("/comment/commentsbybook")
@@ -24,8 +24,8 @@ public class CommentController {
     public void saveComment(@RequestBody Comment comment){
         cos.addComment(comment);
     }
-    @PostMapping("/comment/delete")
-    public void deleteComment(@PathVariable("id") Comment comment){
-        cos.deleteComment(comment);
+    @PostMapping("/comment/delete/{id}")
+    public void deleteComment(@PathVariable("id")int id){
+        cos.deleteComment(id);
     }
 }   

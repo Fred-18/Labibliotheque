@@ -25,7 +25,7 @@ public class CommentService {
     public void addComment(Comment comment){
         cor.save(comment);
     }
-    public void deleteComment(Comment comment){
-        cor.delete(comment);
+    public void deleteComment(int id){
+        cor.deleteById(id);
     }
 }

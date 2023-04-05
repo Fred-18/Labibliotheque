@@ -10,7 +10,7 @@ public class UserController {
     @Autowired
     UserService us;
     @GetMapping("/user/{id}")
-    public User getUserById(int id){
+    public User getUserById(@PathVariable int id){
         return us.getUser(id).orElseThrow();
     }
     @GetMapping("/users")
@@ -21,8 +21,8 @@ public class UserController {
     public void saveUser(@RequestBody User user){
         us.addUser(user);
     }
-    @PostMapping("user/delete")
-    public void deleteUser(@PathVariable("id") User user){
-        us.deleteUser(user);
+    @PostMapping("user/delete{id}")
+    public void deleteUser(@PathVariable("id") int id){
+        us.deleteUser(id);
     }
 }
