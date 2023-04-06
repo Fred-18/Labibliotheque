@@ -12,20 +12,20 @@ import java.util.Optional;
 public class CommentService {
     
     @Autowired
-    private CommentRepository cor;
+    private CommentRepository commentRepository;
     
     public Optional<Comment>getComment(int id){
-        return cor.findById(id);
+        return commentRepository.findById(id);
     }
     
     public Iterable<Comment> getCommentsFromBooks(Book book){
-        return cor.findByBooks(book);
+        return commentRepository.findByBooks(book);
     }
     
     public void addComment(Comment comment){
-        cor.save(comment);
+        commentRepository.save(comment);
     }
     public void deleteComment(int id){
-        cor.deleteById(id);
+        commentRepository.deleteById(id);
     }
 }

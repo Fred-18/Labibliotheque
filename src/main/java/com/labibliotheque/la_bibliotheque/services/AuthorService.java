@@ -10,29 +10,29 @@ import java.util.Optional;
 @Service
 public class AuthorService {
     @Autowired
-    AuthorRepository ar;
+    AuthorRepository authorRepository;
 
     public Optional<Author> getAuthor(int id) {
-        return ar.findById(id);
+        return authorRepository.findById(id);
     }
 
     public Iterable<Author> getAllAuthors() {
-        return ar.findAll();
+        return authorRepository.findAll();
     }
 
     public void addAuthor(Author author) {
-        ar.save(author);
+        authorRepository.save(author);
     }
 
     public void deleteAuthor(int id) {
-        ar.deleteById(id);
+        authorRepository.deleteById(id);
     }
 
     public List<Author> getAuthorByFirstName(String firstname) {
-        return ar.findByFirstNameAuthor(firstname);
+        return authorRepository.findByFirstNameAuthor(firstname);
     }
 
     public List<Author> getAuthorByLastName(String lastname) {
-        return ar.findByLastNameAuthor(lastname);
+        return authorRepository.findByLastNameAuthor(lastname);
     }
 }

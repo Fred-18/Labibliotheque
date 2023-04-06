@@ -10,21 +10,21 @@ import java.util.Optional;
 @Service
 public class UserService {
     @Autowired
-    UserRepository us;
+    UserRepository userRepository;
 
     public Optional<User> getUser(int id) {
-        return us.findById(id);
+        return userRepository.findById(id);
     }
 
     public Iterable<User> getAllUsers() {
-        return us.findAll();
+        return userRepository.findAll();
     }
 
     public void addUser(User user) {
-        us.save(user);
+        userRepository.save(user);
     }
 
     public void deleteUser(int id) {
-        us.deleteById(id);
+        userRepository.deleteById(id);
     }
 }

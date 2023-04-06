@@ -9,18 +9,18 @@ import java.util.Optional;
 @Service
 public class BookService {
     @Autowired
-    BookRepository br;
+    BookRepository bookRepository;
     
     public Optional<Book>getBook(int id){
-        return br.findById(id);
+        return bookRepository.findById(id);
     }
     public Iterable<Book>getAllBooks(){
-        return br.findAll();
+        return bookRepository.findAll();
     }
     public void addBook(Book book){
-        br.save(book);
+        bookRepository.save(book);
     }
     public void deleteBook(Book book){
-        br.delete(book);
+        bookRepository.delete(book);
     }
 }

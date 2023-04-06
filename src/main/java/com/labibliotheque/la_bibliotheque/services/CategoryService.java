@@ -11,13 +11,13 @@ import java.util.Optional;
 
 public class CategoryService {
     @Autowired
-    CategoryRepository cr;
+    CategoryRepository categoryRepository;
     
     public Optional<Category> getCategory(int id){
-        return cr.findById(id);
+        return categoryRepository.findById(id);
     }
     public Iterable<Category>getAllCategories(){
-        return cr.findAll();
+        return categoryRepository.findAll();
     }
     
 }

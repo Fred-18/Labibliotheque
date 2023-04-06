@@ -9,18 +9,18 @@ import java.util.Optional;
 @Service
 public class PublisherService {
     @Autowired
-    PublisherRepository ps;
+    PublisherRepository publisherRepository;
     
     public Optional<Publisher>getPublisher(int id){
-        return ps.findById(id);
+        return publisherRepository.findById(id);
     }
     public Iterable<Publisher>getAllPublishers(){
-        return ps.findAll();
+        return publisherRepository.findAll();
     }
     public void addPublishers(Publisher publisher){
-        ps.save(publisher);
+        publisherRepository.save(publisher);
     }
     public void deletePublishers(int id){
-        ps.deleteById(id);
+        publisherRepository.deleteById(id);
     }
 }
