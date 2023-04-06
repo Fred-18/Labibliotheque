@@ -8,21 +8,21 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 public class UserController {
     @Autowired
-    UserService us;
+    UserService userService;
     @GetMapping("/user/{id}")
     public User getUserById(@PathVariable int id){
-        return us.getUser(id).orElseThrow();
+        return userService.getUser(id).orElseThrow();
     }
     @GetMapping("/users")
     public Iterable<User>getAllUsers(){
-        return us.getAllUsers();
+        return userService.getAllUsers();
     }
     @PostMapping("/user/add")
     public void saveUser(@RequestBody User user){
-        us.addUser(user);
+        userService.addUser(user);
     }
     @PostMapping("user/delete{id}")
     public void deleteUser(@PathVariable("id") int id){
-        us.deleteUser(id);
+        userService.deleteUser(id);
     }
 }

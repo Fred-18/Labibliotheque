@@ -11,15 +11,15 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class CategoryController {
     @Autowired
-    private CategoryService cs;
+    private CategoryService categoryService;
     
     @GetMapping("/category/{id}")
     public Category getCategoryById(@PathVariable("id")int id){
-        return cs.getCategory(id).orElseThrow();
+        return categoryService.getCategory(id).orElseThrow();
     }
     
     @GetMapping("/categories")
     public Iterable<Category>getAllCategories(){
-        return cs.getAllCategories();
+        return categoryService.getAllCategories();
     }
 }

@@ -10,22 +10,22 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 public class CommentController {
     @Autowired
-    private CommentService cos;
+    private CommentService commentService;
     
     @GetMapping("/comment/{id}")
     public Comment getCommentById(@PathVariable int id){
-        return cos.getComment(id).orElseThrow();
+        return commentService.getComment(id).orElseThrow();
     }
     @GetMapping("/comment/commentsbybook")
     public Iterable<Comment>getCommentsBybooks(Book book){
-        return cos.getCommentsFromBooks(book);
+        return commentService.getCommentsFromBooks(book);
     }
     @PostMapping("/comment/add")
     public void saveComment(@RequestBody Comment comment){
-        cos.addComment(comment);
+        commentService.addComment(comment);
     }
     @PostMapping("/comment/delete/{id}")
     public void deleteComment(@PathVariable("id")int id){
-        cos.deleteComment(id);
+        commentService.deleteComment(id);
     }
 }   

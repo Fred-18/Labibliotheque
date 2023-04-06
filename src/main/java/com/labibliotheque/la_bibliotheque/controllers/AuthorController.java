@@ -10,30 +10,30 @@ import java.util.List;
 @RestController
 public class AuthorController {
     @Autowired
-    private AuthorService as;
+    private AuthorService authorService;
 
 
     @GetMapping("/author/{id}")
     public Author getAuthorById(@PathVariable("id") int id){
-        return as.getAuthor(id).orElseThrow();
+        return authorService.getAuthor(id).orElseThrow();
     }
     @GetMapping("/authors/")
     public Iterable<Author>getAllAuthors(){
-        return as.getAllAuthors();
+        return authorService.getAllAuthors();
     }
     @GetMapping("/author/{firstName}")
     public List <Author> getAuthorByFirstName(@PathVariable("firstName")String firstName){
-        return as.getAuthorByFirstName(firstName);
+        return authorService.getAuthorByFirstName(firstName);
     }@GetMapping("/author/{lastName}")
     public List <Author> getAuthorByLastName(@PathVariable("lastName")String lastName){
-        return as.getAuthorByLastName(lastName);
+        return authorService.getAuthorByLastName(lastName);
     }
     @PostMapping("/author/add")
     public void saveAuthor(@RequestBody Author author){
-        as.addAuthor(author);
+        authorService.addAuthor(author);
     }
     @PostMapping("/author/delete/{id}")
     public void deleteAuthor(@PathVariable("id")int id){
-        as.deleteAuthor(id);
+        authorService.deleteAuthor(id);
     }
 }
