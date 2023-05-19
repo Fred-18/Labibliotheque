@@ -14,6 +14,7 @@ public class Book {
     private String description;
     private boolean availability;
     private Date publishDate;
+    
     @ManyToOne
     private Publisher publisher;
     @ManyToOne
