@@ -32,7 +32,7 @@ public class AuthorController {
     public void saveAuthor(@RequestBody Author author){
         authorService.addAuthor(author);
     }
-    @PostMapping("/author/delete/{id}")//deleteMapping
+    @DeleteMapping("/author/delete/{id}")//deleteMapping remplacer le post par un delete
     public void deleteAuthor(@PathVariable("id")int id){
         authorService.deleteAuthor(id);
     }

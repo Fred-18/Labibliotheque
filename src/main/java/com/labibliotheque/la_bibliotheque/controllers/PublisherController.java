@@ -9,21 +9,24 @@ import org.springframework.web.bind.annotation.*;
 public class PublisherController {
     @Autowired
     private PublisherService publisherService;
-    
+
     @GetMapping("/publisher/{id}")
-     public Publisher getPublisherById(@PathVariable int id){
+    public Publisher getPublisherById(@PathVariable int id) {
         return publisherService.getPublisher(id).orElseThrow();
     }
+
     @GetMapping("/publishers")
-     public Iterable<Publisher> getAllPublishers(){
+    public Iterable<Publisher> getAllPublishers() {
         return publisherService.getAllPublishers();
     }
+
     @PostMapping("/publisher/add")
-    public void savePublisher(@RequestBody Publisher publisher){
+    public void savePublisher(@RequestBody Publisher publisher) {
         publisherService.addPublishers(publisher);
     }
-    @PostMapping("/publisher/delete/{id}")
-    public void deletePublisher(@PathVariable("id")int id){
+
+    @DeleteMapping("/publisher/delete/{id}")
+    public void deletePublisher(@PathVariable("id") int id) {
         publisherService.deletePublishers(id);
     }
 }
