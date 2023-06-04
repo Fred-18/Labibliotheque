@@ -8,31 +8,32 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@RequestMapping("authors")
 public class AuthorController {
     @Autowired
     private AuthorService authorService;
 
 
-    @GetMapping("/author/{id}")
+    @GetMapping("{id}")
     public Author getAuthorById(@PathVariable("id") int id){
         return authorService.getAuthor(id).orElseThrow();
     }
-    @GetMapping("/authors/")
+    @GetMapping("/")
     public Iterable<Author>getAllAuthors(){
         return authorService.getAllAuthors();
     }
-    @GetMapping("/author/{firstName}")
+    @GetMapping("{firstName}")
     public List <Author> getAuthorByFirstName(@PathVariable("firstName")String firstName){
         return authorService.getAuthorByFirstName(firstName);
-    }@GetMapping("/author/{lastName}")
+    }@GetMapping("{lastName}")
     public List <Author> getAuthorByLastName(@PathVariable("lastName")String lastName){
         return authorService.getAuthorByLastName(lastName);
     }
-    @PostMapping("/author/add")
+    @PostMapping("add")
     public void saveAuthor(@RequestBody Author author){
         authorService.addAuthor(author);
     }
-    @DeleteMapping("/author/delete/{id}")//deleteMapping remplacer le post par un delete
+    @DeleteMapping("{id}")//deleteMapping remplacer le post par un delete
     public void deleteAuthor(@PathVariable("id")int id){
         authorService.deleteAuthor(id);
     }

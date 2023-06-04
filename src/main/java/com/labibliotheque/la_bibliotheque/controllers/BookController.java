@@ -6,27 +6,28 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@RequestMapping("book")
 public class BookController {
     @Autowired
     private BookService bookService;
     
-    @GetMapping("/book/{id}")
+    @GetMapping("{id}")
     public Book getBookById(@PathVariable("id")int id){
         return bookService.getBook(id).orElseThrow();
     }
     
-    @GetMapping("/books")
+    @GetMapping("/")
     public Iterable<Book>getAllBooks(){
         return bookService.getAllBooks();
     }
     
-    @PostMapping("/book/add")
+    @PostMapping("add")
     public void saveBook(@RequestBody Book book){
         bookService.addBook(book);
     }
-    @DeleteMapping("/book/delete/{id}")
-    public void deleteBook(@PathVariable("id")Book book){
-        bookService.deleteBook(book);
+    @DeleteMapping("{id}")
+    public void deleteBook(@PathVariable("id")int id){
+        bookService.deleteBook(id);
     }
 }
 
