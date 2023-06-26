@@ -29,11 +29,11 @@ public class AuthorController {
     public List <Author> getAuthorByLastName(@PathVariable("lastName")String lastName){
         return authorService.getAuthorByLastName(lastName);
     }
-    @PostMapping("add")
+    @PostMapping("/")
     public void saveAuthor(@RequestBody Author author){
         authorService.addAuthor(author);
     }
-    @DeleteMapping("{id}")//deleteMapping remplacer le post par un delete
+    @DeleteMapping("{id}")
     public void deleteAuthor(@PathVariable("id")int id){
         authorService.deleteAuthor(id);
     }
