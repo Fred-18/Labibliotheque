@@ -1,25 +1,36 @@
-import logo from './logo.svg';
+
+import { createUserWithEmailAndPassword, getAuth} from "firebase/auth";
+import {useState} from "react";
 import './App.css';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [email, setEmail] = useState()
+    const [password, setPassword] = useState()
+    const auth= getAuth();
+    const handleForm = async () => {
+        console.log("first")
+        await createUserWithEmailAndPassword(auth, email, password).then(userCredential => {
+            const user = userCredential.user;
+            console.log(user)
+        }).catch(error => {
+            console.log(error)
+        })
+        console.log("second")
+    }
+    return (
+        <div className="App">
+            <form>
+                <input required type='email' value={email} onChange={(event) => {
+                    setEmail(event.target.value)
+
+                }}/>
+                <input type='password' value={password} onChange={(event) => {
+                    setPassword(event.target.value)
+                }}/>
+                <button onClick={() => handleForm()}>envoyer</button>
+            </form>
+        </div>
+    );
 }
 
 export default App;
