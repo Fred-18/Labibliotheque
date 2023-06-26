@@ -26,5 +26,9 @@ public class CategoryService {
         return StreamSupport.stream(categoryRepository.findAll().spliterator(), false)
                 .map(categoryMapper::toDto)
                 .collect(Collectors.toList());
-    }   
+    }
+
+    public void addCategory(Category category){
+        categoryRepository.save(categoryMapper.toEntity(category));
+    }
 }
