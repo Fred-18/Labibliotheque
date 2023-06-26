@@ -1,3 +1,4 @@
+
 package com.labibliotheque.la_bibliotheque.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,7 +32,7 @@ public class WebSecurityConfig {
         http.csrf().disable().authorizeHttpRequests()
                 .requestMatchers("/signup", "/js/**", "/css/**").permitAll()
                 .requestMatchers("/admin/**").hasAuthority("ADMIN")
-                .anyRequest().authenticated()
+                .anyRequest().permitAll()
                 .and()
                 .formLogin().loginPage("/").defaultSuccessUrl("/dashboard").permitAll()
                 .and()
@@ -45,4 +46,5 @@ public class WebSecurityConfig {
         builder.userDetailsService(userService);
     }
 }
+
 
