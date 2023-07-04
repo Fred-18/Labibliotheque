@@ -6,7 +6,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 @RestController
-@RequestMapping(value = "book",produces = "application/json") //Book avec un s 
+@RequestMapping(value = "books",produces = "application/json") //Book avec un s
 @Tag(name="Book api")
 public class BookController {
     @Autowired
