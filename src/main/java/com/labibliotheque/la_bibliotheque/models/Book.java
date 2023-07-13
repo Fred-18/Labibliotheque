@@ -10,4 +10,5 @@ public class Book {
     private String description;
     private boolean availability;
     private Date publishDate;
+    private int idPublisher;
 }
