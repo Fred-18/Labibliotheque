@@ -16,7 +16,6 @@ public class CategoryService {
     @Autowired
     CategoryMapper categoryMapper;
     @Autowired
-            
     CategoryRepository categoryRepository;
     
     public Optional<Category> getCategory(int id){
@@ -28,7 +27,7 @@ public class CategoryService {
                 .collect(Collectors.toList());
     }
 
-    public void addCategory(Category category){
+    public void saveCategory(Category category){
         categoryRepository.save(categoryMapper.toEntity(category));
     }
 }
