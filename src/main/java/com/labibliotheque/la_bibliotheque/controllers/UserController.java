@@ -2,26 +2,29 @@ package com.labibliotheque.la_bibliotheque.controllers;
 
 import com.labibliotheque.la_bibliotheque.models.User;
 import com.labibliotheque.la_bibliotheque.services.UserService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@RequestMapping(value = "users",produces = "application/json")
+@Tag(name = "user api")
 public class UserController {
     @Autowired
     UserService userService;
-    @GetMapping("/user/{id}")
+    @GetMapping("/{id}")
     public User getUserById(@PathVariable int id){
         return userService.getUser(id).orElseThrow();
     }
-    @GetMapping("/users")
+    @GetMapping()
     public Iterable<User>getAllUsers(){
         return userService.getAllUsers();
     }
-    @PostMapping("/user/add")
+    @PostMapping()
     public void saveUser(@RequestBody User user){
         userService.addUser(user);
     }
-    @PostMapping("user/delete{id}")
+    @PostMapping("/{id}")
     public void deleteUser(@PathVariable("id") int id){
         userService.deleteUser(id);
     }
