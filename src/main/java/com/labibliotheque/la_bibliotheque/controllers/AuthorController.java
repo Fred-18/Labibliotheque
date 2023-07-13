@@ -2,23 +2,24 @@ package com.labibliotheque.la_bibliotheque.controllers;
 
 import com.labibliotheque.la_bibliotheque.models.Author;
 import com.labibliotheque.la_bibliotheque.services.AuthorService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("authors")
+@RequestMapping(value = "authors",produces = "application/json")
+@Tag(name = "author api")
 public class AuthorController {
     @Autowired
     private AuthorService authorService;
 
-
-    @GetMapping("{id}")
+    @GetMapping("/{id}")
     public Author getAuthorById(@PathVariable("id") int id){
         return authorService.getAuthor(id).orElseThrow();
     }
-    @GetMapping("/")
+    @GetMapping()
     public Iterable<Author>getAllAuthors(){
         return authorService.getAllAuthors();
     }
@@ -29,11 +30,11 @@ public class AuthorController {
     public List <Author> getAuthorByLastName(@PathVariable("lastName")String lastName){
         return authorService.getAuthorByLastName(lastName);
     }
-    @PostMapping("/")
+    @PostMapping()
     public void saveAuthor(@RequestBody Author author){
         authorService.addAuthor(author);
     }
-    @DeleteMapping("{id}")
+    @DeleteMapping("/{id}")
     public void deleteAuthor(@PathVariable("id")int id){
         authorService.deleteAuthor(id);
     }
