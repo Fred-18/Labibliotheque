@@ -19,6 +19,7 @@ public class Jwt {
     private static final long JWT_TOKEN_VALIDITY = 5 * 60 * 60;
     private String secret;
     private final SecretKey KEY;
+
     public Jwt(Environment env) {
         this.secret = env.getProperty("jwt.secret");
         this.KEY = Keys.hmacShaKeyFor(secret.getBytes(StandardCharsets.UTF_8));
@@ -27,7 +28,6 @@ public class Jwt {
     public String getUsernameFromToken(String token) {
         return getClaimFromToken(token, Claims::getSubject);
     }
-
 
     public Date getExpirationDateFromToken(String token) {
         return getClaimFromToken(token, Claims::getExpiration);
@@ -65,6 +65,4 @@ public class Jwt {
         Map<String, Object> claims = new HashMap<>();
         return doGenerateToken(claims, userDetails.getUsername());
     }
-
-
 }
