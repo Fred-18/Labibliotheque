@@ -1,5 +1,6 @@
 package com.labibliotheque.la_bibliotheque.repositories.models;
 
+import com.labibliotheque.la_bibliotheque.models.Role;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -23,7 +24,7 @@ public class UserEntity {
     private String address;
     private int age;
 
-    @ManyToOne
-    private RoleEntity role;
+
+    private Role role;
 }   
     

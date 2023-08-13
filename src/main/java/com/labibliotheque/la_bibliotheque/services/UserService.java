@@ -28,12 +28,11 @@ public class UserService implements UserDetailsService {
     @Override
     @Transactional(readOnly = true)
     public UserDetails loadUserByUsername(String email) {
-
-        User user = userRepository.findByMail(email);
+        User user = userMapper.toDto(userRepository.findByMail(email)) ;
         if (user == null) throw new UsernameNotFoundException(email);
 
         Set<GrantedAuthority> authorities = new HashSet<>();
-        authorities.add(new SimpleGrantedAuthority(user.getRole().getLabelRole()));
+        authorities.add(new SimpleGrantedAuthority(user.getRole().name()));
 
         return new org.springframework.security.core.userdetails.User(user.getMail(), user.getPassword(), authorities);
     }
