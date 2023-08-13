@@ -12,7 +12,6 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class CategoryEntity {
-    // TODO: 13/07/2023  @GeneratedValue(strategy = GenerationType.IDENTITY) voir avec Guillaume
     @Id
     private int id;
     private String nameCategory;
