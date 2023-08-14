@@ -3,6 +3,7 @@ package com.labibliotheque.la_bibliotheque.services;
 import com.labibliotheque.la_bibliotheque.mappers.AuthorMapper;
 import com.labibliotheque.la_bibliotheque.mappers.BookMapper;
 import com.labibliotheque.la_bibliotheque.models.Book;
+import com.labibliotheque.la_bibliotheque.models.SimpleBook;
 import com.labibliotheque.la_bibliotheque.repositories.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -27,7 +28,7 @@ public class BookService {
                 .collect(Collectors.toList());
     }
     
-    public void addBook(Book book){
+    public void addBook(SimpleBook book){
         bookRepository.save(bookMapper.toEntity(book));
     }
     public void deleteBook(int id){

@@ -1,6 +1,7 @@
 package com.labibliotheque.la_bibliotheque.controllers;
 
 import com.labibliotheque.la_bibliotheque.models.Book;
+import com.labibliotheque.la_bibliotheque.models.SimpleBook;
 import com.labibliotheque.la_bibliotheque.services.BookService;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +24,7 @@ public class BookController {
     }
     
     @PostMapping()
-    public void saveBook(@RequestBody Book book){
+    public void saveBook(@RequestBody SimpleBook book){
         bookService.addBook(book);
     }
     @DeleteMapping("/{id}")
