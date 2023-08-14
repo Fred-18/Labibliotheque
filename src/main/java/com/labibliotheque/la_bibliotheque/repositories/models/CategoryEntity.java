@@ -13,6 +13,7 @@ import java.util.List;
 @AllArgsConstructor
 public class CategoryEntity {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String nameCategory;
 
