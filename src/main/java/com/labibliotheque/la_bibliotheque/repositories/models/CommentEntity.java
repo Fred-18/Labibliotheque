@@ -9,6 +9,7 @@ import java.util.Date;
 @Entity
 public class CommentEntity {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private Date commentDate;
     private int ratting;

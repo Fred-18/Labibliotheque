@@ -1,9 +1,8 @@
 package com.labibliotheque.la_bibliotheque.services;
 
-import com.labibliotheque.la_bibliotheque.mappers.AuthorMapper;
 import com.labibliotheque.la_bibliotheque.mappers.CommentMapper;
-import com.labibliotheque.la_bibliotheque.models.Book;
-import com.labibliotheque.la_bibliotheque.models.Comment;
+import com.labibliotheque.la_bibliotheque.dto.Book;
+import com.labibliotheque.la_bibliotheque.dto.Comment;
 import com.labibliotheque.la_bibliotheque.repositories.CommentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

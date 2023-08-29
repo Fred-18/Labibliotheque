@@ -1,6 +1,6 @@
 package com.labibliotheque.la_bibliotheque.repositories;
 
-import com.labibliotheque.la_bibliotheque.models.Comment;
+import com.labibliotheque.la_bibliotheque.dto.Comment;
 import com.labibliotheque.la_bibliotheque.repositories.models.BookEntity;
 import com.labibliotheque.la_bibliotheque.repositories.models.CommentEntity;
 import org.springframework.data.jpa.repository.JpaRepository;

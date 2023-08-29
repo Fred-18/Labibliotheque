@@ -1,6 +1,6 @@
 package com.labibliotheque.la_bibliotheque.mappers;
 
-import com.labibliotheque.la_bibliotheque.models.Comment;
+import com.labibliotheque.la_bibliotheque.dto.Comment;
 import com.labibliotheque.la_bibliotheque.repositories.models.CommentEntity;
 import org.mapstruct.Mapper;
 
