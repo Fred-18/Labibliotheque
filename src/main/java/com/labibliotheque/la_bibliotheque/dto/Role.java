@@ -1,4 +1,4 @@
-package com.labibliotheque.la_bibliotheque.models;
+package com.labibliotheque.la_bibliotheque.dto;
 
 
 public enum Role {
