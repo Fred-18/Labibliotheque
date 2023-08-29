@@ -1,9 +1,8 @@
 package com.labibliotheque.la_bibliotheque.services;
 
-import com.labibliotheque.la_bibliotheque.mappers.AuthorMapper;
 import com.labibliotheque.la_bibliotheque.mappers.BookMapper;
-import com.labibliotheque.la_bibliotheque.models.Book;
-import com.labibliotheque.la_bibliotheque.models.SimpleBook;
+import com.labibliotheque.la_bibliotheque.dto.Book;
+import com.labibliotheque.la_bibliotheque.dto.SimpleBook;
 import com.labibliotheque.la_bibliotheque.repositories.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

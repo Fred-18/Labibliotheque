@@ -1,4 +1,4 @@
-package com.labibliotheque.la_bibliotheque.models;
+package com.labibliotheque.la_bibliotheque.dto;
 
 import lombok.Data;
 import java.util.Date;
@@ -12,4 +12,8 @@ public class Book {
     private Date publishDate;
     private  Publisher publisher;
     private Category category;
+    private Author author;
+
+
 }
+

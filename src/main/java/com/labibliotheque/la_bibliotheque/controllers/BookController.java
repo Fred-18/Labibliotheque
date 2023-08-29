@@ -1,7 +1,7 @@
 package com.labibliotheque.la_bibliotheque.controllers;
 
-import com.labibliotheque.la_bibliotheque.models.Book;
-import com.labibliotheque.la_bibliotheque.models.SimpleBook;
+import com.labibliotheque.la_bibliotheque.dto.Book;
+import com.labibliotheque.la_bibliotheque.dto.SimpleBook;
 import com.labibliotheque.la_bibliotheque.services.BookService;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;

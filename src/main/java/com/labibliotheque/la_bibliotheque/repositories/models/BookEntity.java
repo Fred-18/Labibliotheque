@@ -1,18 +1,15 @@
 package com.labibliotheque.la_bibliotheque.repositories.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToMany;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
 import lombok.Data;
+import java.sql.Date;
 
-import java.util.Date;
-import java.util.List;
 
 @Data
 @Entity
 public class BookEntity {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String title;
     private String description;
@@ -23,6 +20,6 @@ public class BookEntity {
     private PublisherEntity publisher;
     @ManyToOne
     private CategoryEntity category;
-    @ManyToMany
-    private List<AuthorEntity> authors;
+    @ManyToOne
+    private AuthorEntity author;
 }
