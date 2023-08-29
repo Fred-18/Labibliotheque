@@ -12,6 +12,6 @@ public class PublisherEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String namePublisher;
-    @OneToMany(mappedBy = "publisher")
-    private List<BookEntity> books;
+    //@OneToMany(mappedBy = "publisher")
+   // private List<BookEntity> books;
 }

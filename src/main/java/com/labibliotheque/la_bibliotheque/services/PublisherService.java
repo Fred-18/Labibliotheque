@@ -1,7 +1,7 @@
 package com.labibliotheque.la_bibliotheque.services;
 
 import com.labibliotheque.la_bibliotheque.mappers.PublisherMapper;
-import com.labibliotheque.la_bibliotheque.models.Publisher;
+import com.labibliotheque.la_bibliotheque.dto.Publisher;
 import com.labibliotheque.la_bibliotheque.repositories.PublisherRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

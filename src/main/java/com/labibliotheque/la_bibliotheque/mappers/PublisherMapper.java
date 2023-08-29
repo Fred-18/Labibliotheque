@@ -1,6 +1,6 @@
 package com.labibliotheque.la_bibliotheque.mappers;
 
-import com.labibliotheque.la_bibliotheque.models.Publisher;
+import com.labibliotheque.la_bibliotheque.dto.Publisher;
 import com.labibliotheque.la_bibliotheque.repositories.models.PublisherEntity;
 import org.mapstruct.Mapper;
 
