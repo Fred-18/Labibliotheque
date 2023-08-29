@@ -1,7 +1,11 @@
-package com.labibliotheque.la_bibliotheque.models;
+package com.labibliotheque.la_bibliotheque.dto;
 
+import lombok.Data;
+
+import java.util.ArrayList;
 import java.util.Date;
 
+@Data
 public class SimpleBook {
     private int id;
     private String title;
@@ -11,4 +15,5 @@ public class SimpleBook {
 
     private int idCategory;
     private int idPublisher;
+    private  int idAuthor;
 }
