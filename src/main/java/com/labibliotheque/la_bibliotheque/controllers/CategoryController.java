@@ -1,10 +1,8 @@
 package com.labibliotheque.la_bibliotheque.controllers;
 
-import com.labibliotheque.la_bibliotheque.models.Author;
-import com.labibliotheque.la_bibliotheque.models.Category;
+import com.labibliotheque.la_bibliotheque.dto.Category;
 import com.labibliotheque.la_bibliotheque.services.CategoryService;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import jakarta.validation.constraints.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
