@@ -1,6 +1,6 @@
 package com.labibliotheque.la_bibliotheque.repositories.models;
 
-import com.labibliotheque.la_bibliotheque.models.Role;
+import com.labibliotheque.la_bibliotheque.dto.Role;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;

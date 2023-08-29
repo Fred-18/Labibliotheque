@@ -1,6 +1,6 @@
 package com.labibliotheque.la_bibliotheque.mappers;
 
-import com.labibliotheque.la_bibliotheque.models.User;
+import com.labibliotheque.la_bibliotheque.dto.User;
 import com.labibliotheque.la_bibliotheque.repositories.models.UserEntity;
 import org.mapstruct.Mapper;
 

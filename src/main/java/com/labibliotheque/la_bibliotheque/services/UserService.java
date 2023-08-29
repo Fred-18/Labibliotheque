@@ -1,7 +1,7 @@
 package com.labibliotheque.la_bibliotheque.services;
 
 import com.labibliotheque.la_bibliotheque.mappers.UserMapper;
-import com.labibliotheque.la_bibliotheque.models.User;
+import com.labibliotheque.la_bibliotheque.dto.User;
 import com.labibliotheque.la_bibliotheque.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;

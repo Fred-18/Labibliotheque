@@ -1,6 +1,6 @@
 package com.labibliotheque.la_bibliotheque.controllers;
 
-import com.labibliotheque.la_bibliotheque.models.User;
+import com.labibliotheque.la_bibliotheque.dto.User;
 import com.labibliotheque.la_bibliotheque.services.UserService;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
