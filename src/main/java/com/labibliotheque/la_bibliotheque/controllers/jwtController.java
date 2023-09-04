@@ -17,10 +17,10 @@ public class jwtController {
 @Autowired
     UserService userService;
 @PostMapping()
-   public String getToken(@RequestBody LoginForm loginForm){
+   public String getToken(@RequestBody LoginForm loginForm) throws Exception {
     System.out.println(loginForm.getEmail());
 
-    return jwt.generateToken(userService.loadUserByUsername(loginForm.getEmail()));
+    return jwt.generateToken(userService.signIn(loginForm.getEmail(), loginForm.getPassword()));
 }
 
 }
