@@ -33,6 +33,7 @@ public class Jwt {
         return getClaimFromToken(token, Claims::getExpiration);
     }
 
+
     private <T> T getClaimFromToken(String token, Function<Claims, T> claimsResolver) {
         final Claims claims = getAllClaimsFromToken(token);
         return claimsResolver.apply(claims);
@@ -56,9 +57,8 @@ public class Jwt {
                 .compact();
     }
 
-    public Boolean validateToken(String token, UserDetails userDetails) {
-        final String username = getUsernameFromToken(token);
-        return (username.equals(userDetails.getUsername()) && !isTokenExpired(token));
+    public Boolean validateToken(String token) {
+        return  getUsernameFromToken(token) != null && !isTokenExpired(token);
     }
 
     public String generateToken(UserDetails userDetails) {
