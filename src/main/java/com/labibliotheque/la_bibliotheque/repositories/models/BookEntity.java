@@ -22,4 +22,6 @@ public class BookEntity {
     private CategoryEntity category;
     @ManyToOne
     private AuthorEntity author;
+    @OneToOne
+    private UserEntity user;
 }

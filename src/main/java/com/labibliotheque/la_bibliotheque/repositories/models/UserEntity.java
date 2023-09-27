@@ -24,7 +24,9 @@ public class UserEntity {
     private String address;
     private int age;
 
-
     private Role role;
+
+    @OneToOne
+    private BookEntity book;
 }   
     

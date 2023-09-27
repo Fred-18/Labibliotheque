@@ -13,6 +13,7 @@ public class Book {
     private  Publisher publisher;
     private Category category;
     private Author author;
+    private User user;
 
 
 }
