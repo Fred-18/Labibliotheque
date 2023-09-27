@@ -17,7 +17,7 @@ public class WebSecurityConfig {
         http.cors().and().csrf().disable()
                 .authorizeHttpRequests()
                 .requestMatchers("/user/**").hasAuthority("USER")
-
+                .requestMatchers("/users").permitAll()
                 .requestMatchers("/librarian/**").hasAuthority("LIBRARIAN")
                 .requestMatchers("/token").permitAll()
                 .requestMatchers("/swagger-ui/", "/v3/**").permitAll()
