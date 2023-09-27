@@ -18,5 +18,6 @@ import lombok.NoArgsConstructor;
         private String address;
         private int age;
         private Role role;
+        private Book book;
     }   
     

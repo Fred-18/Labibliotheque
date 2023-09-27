@@ -2,7 +2,10 @@ package com.labibliotheque.la_bibliotheque.services;
 
 import com.labibliotheque.la_bibliotheque.dto.User;
 import com.labibliotheque.la_bibliotheque.mappers.UserMapper;
+import com.labibliotheque.la_bibliotheque.repositories.BookRepository;
 import com.labibliotheque.la_bibliotheque.repositories.UserRepository;
+import com.labibliotheque.la_bibliotheque.repositories.models.BookEntity;
+import com.labibliotheque.la_bibliotheque.repositories.models.UserEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -26,6 +29,8 @@ public class UserService implements UserDetailsService {
     private UserRepository userRepository;
     @Autowired
     private PasswordEncoder passwordEncoder;
+    @Autowired
+    private BookRepository bookRepository;
 
     @Override
     public UserDetails loadUserByUsername(String email) {
@@ -63,5 +68,15 @@ public class UserService implements UserDetailsService {
 
     public void deleteUser(int id) {
         userRepository.deleteById(id);
+    }
+
+    public void bookingBook(int idBook, int idUser) {
+        UserEntity user = userRepository.findById(idUser).orElseThrow();
+        BookEntity book = bookRepository.findById(idBook).orElseThrow();
+        book.setAvailability(false);
+        book.setUser(user);
+        user.setBook(book);
+        bookRepository.save(book);
+        userRepository.save(user);
     }
 }

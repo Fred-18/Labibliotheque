@@ -29,4 +29,9 @@ public class UserController {
     public void deleteUser(@PathVariable("id") int id){
         userService.deleteUser(id);
     }
+    @PostMapping("{idUser}/booking/{idBook}")
+    public  void bookingBook(@PathVariable int idBook , @PathVariable int idUser){
+        userService.bookingBook(idBook,idUser);
+    }
 }
+
