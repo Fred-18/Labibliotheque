@@ -1,39 +1,47 @@
 package com.labibliotheque.la_bibliotheque.services;
 
-import com.labibliotheque.la_bibliotheque.models.Author;
+import com.labibliotheque.la_bibliotheque.mappers.AuthorMapper;
+import com.labibliotheque.la_bibliotheque.dto.Author;
 import com.labibliotheque.la_bibliotheque.repositories.AuthorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
+import java.util.stream.StreamSupport;
 
 @Service
 public class AuthorService {
     @Autowired
-    AuthorRepository ar;
+    AuthorMapper authorMapper;
+    @Autowired
+    AuthorRepository authorRepository;
 
     public Optional<Author> getAuthor(int id) {
-        return ar.findById(id);
+        return authorRepository.findById(id) .map(authorMapper::toDto);
     }
 
     public Iterable<Author> getAllAuthors() {
-        return ar.findAll();
+        return StreamSupport.stream(authorRepository.findAll().spliterator(), false)
+                .map(authorMapper::toDto)
+                .collect(Collectors.toList());
     }
 
     public void addAuthor(Author author) {
-        ar.save(author);
+        authorRepository.save(authorMapper.toEntity(author));
     }
 
-    public void deleteAuthor(Author author) {
-        ar.delete(author);
+    public void deleteAuthor(int id) {
+        authorRepository.deleteById(id);
     }
 
     public List<Author> getAuthorByFirstName(String firstname) {
-        return ar.findByFirstNameAuthor(firstname);
+        return authorRepository.findByFirstNameAuthor(firstname).stream().map(authorMapper::toDto)
+                .collect(Collectors.toList());
     }
 
     public List<Author> getAuthorByLastName(String lastname) {
-        return ar.findByLastNameAuthor(lastname);
+        return authorRepository.findByLastNameAuthor(lastname).stream().map(authorMapper::toDto)
+                .collect(Collectors.toList());
     }
 }
