@@ -1,7 +1,5 @@
 # 📚 La Bibliothèque
 
-## 🇫🇷 Présentation (Français)
-
 **La Bibliothèque** est un projet full-stack réalisé dans le cadre de ma formation.  
 L’objectif principal était de **valider les compétences de l’examen** en développant une application complète comprenant :  
 
