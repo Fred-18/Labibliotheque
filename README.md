@@ -1,44 +1,123 @@
 # 📚 La Bibliothèque
 
-**La Bibliothèque** is a full-stack study project developed as part of my training.  
-The goal was to **validate exam requirements** by creating a functional application with a complete back-end, a relational database, and a responsive front-end.  
+## 🇫🇷 Présentation (Français)
 
-The project is intentionally educational — it is not a production-ready application but a way to practice connecting **Java + Spring Boot** with a relational database and a **React front-end**.
+**La Bibliothèque** est un projet full-stack réalisé dans le cadre de ma formation.  
+L’objectif principal était de **valider les compétences de l’examen** en développant une application complète comprenant :  
 
----
+- Un **back-end en Java (Spring Boot)** avec une **API RESTful** connectée à une base de données relationnelle (MySQL).  
+- Un **front-end en React**, fonctionnel et responsive.  
+- Une architecture structurée (contrôleurs, services, dépôts, sécurité JWT).  
 
-## 🎯 Project Objectives
-
-- Build a **RESTful API** using Spring Boot.  
-- Connect the API to a **relational database** (MySQL).  
-- Develop a **responsive front-end** with React.  
-- Apply an MVC-like structure with **controllers, services, and repositories**.  
-- Add **authentication** with Spring Security and JWT.  
-- Validate full-stack development skills in a real case study.
+Ce projet est avant tout **pédagogique** : il n’est pas destiné à la production, mais il démontre comment connecter un front et un back autour d’une base de données relationnelle.  
 
 ---
 
-## 🛠️ Technologies Used
+### 🎯 Objectifs du projet
 
-- **Back-end:**  
+- Construire une **API RESTful** avec Spring Boot.  
+- Connecter l’API à une **base de données relationnelle (MySQL)**.  
+- Développer un **front-end responsive** en React.  
+- Implémenter une authentification avec **Spring Security + JWT**.  
+- Mettre en place un projet full-stack de bout en bout.  
+
+---
+
+### 🛠️ Technologies utilisées
+
+- **Back-end :**  
   - Java  
   - Spring Boot  
   - Spring Data JPA  
   - Spring Security (JWT)  
 
-- **Front-end:**  
+- **Front-end :**  
   - React.js  
   - HTML / CSS  
 
-- **Database:**  
+- **Base de données :**  
   - MySQL (via Docker Compose)  
 
-- **Other Tools:**  
+- **Outils :**  
   - Docker  
   - Maven  
-  - Postman (API testing)  
+  - Postman  
 
 ---
 
-## 📂 Project Structure
+### 📂 Structure du projet
+
+Labibliotheque/
+├── src/
+│ ├── main/
+│ │ ├── java/com.labibliotheque.la_bibliotheque
+│ │ │ ├── config/ # Configuration (app & sécurité)
+│ │ │ ├── controllers/ # Contrôleurs REST (API)
+│ │ │ ├── dto/ # Objets de transfert de données
+│ │ │ ├── jwt/ # Gestion JWT
+│ │ │ ├── mappers/ # Mapping Entité <-> DTO
+│ │ │ ├── repositories/ # Accès DB (JPA)
+│ │ │ ├── security/ # Sécurité (Spring Security)
+│ │ │ ├── services/ # Logique métier
+│ │ │ └── LaBibliothequeApplication.java # Point d’entrée
+│ │ └── resources/
+│ │ └── application.properties # Config DB et serveur
+│ └── test/
+│ └── java/com.labibliotheque.la_bibliotheque
+│ ├── AuthorServiceTest.java
+│ └── LaBibliothequeApplicationTests.java
+├── docker-mysql.yml # Base MySQL via Docker
+├── pom.xml # Dépendances Maven
+└── README.md
+
+yaml
+Copier le code
+
+---
+
+### 🚀 Installation & Exécution
+
+1. **Cloner le projet**
+```bash
+git clone https://github.com/<ton-repo>/la-bibliotheque.git
+cd la-bibliotheque
+Lancer la base MySQL avec Docker
+
+bash
+Copier le code
+docker-compose -f docker-mysql.yml up -d
+Configurer la connexion à la base dans application.properties
+
+properties
+Copier le code
+spring.datasource.url=jdbc:mysql://localhost:3306/librarydb
+spring.datasource.username=root
+spring.datasource.password=tonpassword
+spring.jpa.hibernate.ddl-auto=update
+Démarrer le back-end (Spring Boot)
+
+bash
+Copier le code
+./mvnw spring-boot:run
+Démarrer le front-end (React)
+
+bash
+Copier le code
+cd frontend
+npm install
+npm start
+🧠 Compétences acquises
+Structuration d’un projet Spring Boot.
+
+Création d’une API RESTful avec une base relationnelle.
+
+Gestion de l’authentification avec JWT.
+
+Développement d’un front-end responsive en React.
+
+Exécution d’une base MySQL avec Docker Compose.
+
+📌 Remarques
+Ce projet a été réalisé dans un cadre pédagogique.
+Il est volontairement simpliste et non destiné à la production, mais il montre l’ensemble du processus : API, base de données, front-end.
 
