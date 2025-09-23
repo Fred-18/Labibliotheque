@@ -47,38 +47,34 @@ Ce projet est avant tout **pédagogique** : il n’est pas destiné à la produc
 
 ### 📂 Structure du projet
 
+```plaintext
 Labibliotheque/
-├── src/
-│ ├── main/
-│ │ ├── java/com.labibliotheque.la_bibliotheque
-│ │ │ ├── config/ # Configuration (app & sécurité)
-│ │ │ ├── controllers/ # Contrôleurs REST (API)
-│ │ │ ├── dto/ # Objets de transfert de données
-│ │ │ ├── jwt/ # Gestion JWT
-│ │ │ ├── mappers/ # Mapping Entité <-> DTO
-│ │ │ ├── repositories/ # Accès DB (JPA)
-│ │ │ ├── security/ # Sécurité (Spring Security)
-│ │ │ ├── services/ # Logique métier
-│ │ │ └── LaBibliothequeApplication.java # Point d’entrée
-│ │ └── resources/
-│ │ └── application.properties # Config DB et serveur
-│ └── test/
-│ └── java/com.labibliotheque.la_bibliotheque
-│ ├── AuthorServiceTest.java
-│ └── LaBibliothequeApplicationTests.java
-├── docker-mysql.yml # Base MySQL via Docker
-├── pom.xml # Dépendances Maven
-└── README.md
+ ├── src/
+ │   ├── main/
+ │   │   ├── java/com.labibliotheque.la_bibliotheque
+ │   │   │   ├── config/          # Configuration (app & sécurité)
+ │   │   │   ├── controllers/     # Contrôleurs REST (API)
+ │   │   │   ├── dto/             # Objets de transfert de données
+ │   │   │   ├── jwt/             # Gestion JWT
+ │   │   │   ├── mappers/         # Mapping Entité <-> DTO
+ │   │   │   ├── repositories/    # Accès DB (JPA)
+ │   │   │   ├── security/        # Sécurité (Spring Security)
+ │   │   │   ├── services/        # Logique métier
+ │   │   │   └── LaBibliothequeApplication.java # Point d’entrée
+ │   │   └── resources/
+ │   │       └── application.properties  # Config DB et serveur
+ │   └── test/
+ │       └── java/com.labibliotheque.la_bibliotheque
+ │           ├── AuthorServiceTest.java
+ │           └── LaBibliothequeApplicationTests.java
+ ├── docker-mysql.yml   # Base MySQL via Docker
+ ├── pom.xml            # Dépendances Maven
+ └── README.md
+🚀 Installation & Exécution
+Cloner le projet
 
-yaml
+bash
 Copier le code
-
----
-
-### 🚀 Installation & Exécution
-
-1. **Cloner le projet**
-```bash
 git clone https://github.com/<ton-repo>/la-bibliotheque.git
 cd la-bibliotheque
 Lancer la base MySQL avec Docker
@@ -120,4 +116,3 @@ Exécution d’une base MySQL avec Docker Compose.
 📌 Remarques
 Ce projet a été réalisé dans un cadre pédagogique.
 Il est volontairement simpliste et non destiné à la production, mais il montre l’ensemble du processus : API, base de données, front-end.
-
